@@ -14,6 +14,12 @@ case $option in
 	# new car - input individually and store as string YR:MK:MOD
 	echo "enter year";
 	read -r YR;
+	# check to make sure YR is integer only
+	while ! [[ ${YR} =~ ^[[:digit:]]+$ ]]
+	do
+		echo "enter year";
+		read -r YR;
+	done
 	echo "enter make";
 	read -r MK;
 	echo "enter model";
