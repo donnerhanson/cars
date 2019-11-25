@@ -13,4 +13,5 @@ This repo contains a bash script named “cars.sh” that will help a user maint
 
 ## Features
 ### User Input Checking
-If a user does not perform one of the possible menu options the program prompts for correct input.
+If a user does not perform one of the possible menu options the program prompts for correct input.  
+If a user attempts to put non-digits into year the program re-prompts.  
