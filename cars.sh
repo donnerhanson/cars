@@ -14,7 +14,7 @@ case $option in
 	# new car - input individually and store as string YR:MK:MOD
 	echo "enter year";
 	read -r YR;
-	# check to make sure YR is integer only
+	# check to make sure YR is integer only using Regex
 	while ! [[ ${YR} =~ ^[[:digit:]]+$ ]]
 	do
 		echo "enter year";
@@ -32,7 +32,7 @@ case $option in
 	# FS is the field separator and OFS is the output field separator
 	awk '$1=$1' FS=":" OFS=" " My_old_cars &> /dev/null;
 	# sort the list by the first column by numeric value
-	# and output to tempFile.txt
+	# and redirect output to tempFile.txt
 	sort -nk1 My_old_cars > tempFile.txt;
 	# rename tempFile as My_old_cars
 	mv tempFile.txt My_old_cars;
